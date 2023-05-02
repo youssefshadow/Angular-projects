@@ -1,17 +1,20 @@
 <!-- todolist.component.html -->
-<h2>{{ title }}</h2>
 
-<form (submit)="addItem(newItem.value); newItem.value = ''">
-  <label>
-    Nouvelle tâche :
-    <input type="text" #newItem />
-  </label>
-  <button type="submit">Ajouter</button>
-</form>
+<div class="container">
+  <h2>{{ title }}</h2>
 
-<ul>
-  <li *ngFor="let item of items; let i = index">
-    {{ item }}
-    <button (click)="removeItem(i)">Supprimer</button>
-  </li>
-</ul>
+  <form (submit)="addItem(newItem.value); newItem.value = ''">
+    <label>
+      Nouvelle tâche :
+      <input type="text" #newItem />
+    </label>
+    <button type="submit">Ajouter</button>
+  </form>
+
+  <ul>
+    <li *ngFor="let item of items; let i = index">
+      {{ item }}
+      <button (click)="removeItem(i)">Supprimer</button>
+    </li>
+  </ul>
+</div>
