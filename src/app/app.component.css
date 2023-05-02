@@ -29,8 +29,8 @@ input[type="text"] {
   margin-top: 50px;
   border: 1px solid black;
   padding: 30 30;
-
   background-color: #ecf2ff;
   margin: auto;
+  margin-bottom: 30px;
   width: 80%;
 }
