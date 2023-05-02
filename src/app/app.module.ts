@@ -1,16 +1,21 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { FormsModule } from '@angular/forms'; // Import du module FormsModule
-
+import { FormsModule } from '@angular/forms';
+import { SuperComponent } from './super/super.component';
 import { AppComponent } from './app.component';
+import { LesAmisComponent } from './les-amis/les-amis.component';
+import { UnAmiComponent } from './un-ami/un-ami.component';
 
 @NgModule({
-  declarations: [AppComponent],
-  imports: [
-    BrowserModule,
-    FormsModule, // Ajout du module FormsModule dans la liste des imports
+  declarations: [
+    AppComponent,
+    SuperComponent,
+    LesAmisComponent,
+    LesAmisComponent,
+    UnAmiComponent,
   ],
+  imports: [BrowserModule, FormsModule],
   providers: [],
-  bootstrap: [AppComponent],
+  bootstrap: [AppComponent, SuperComponent],
 })
 export class AppModule {}
