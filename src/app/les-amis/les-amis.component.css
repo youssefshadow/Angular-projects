@@ -12,6 +12,8 @@
 .container {
   border: 1px solid black;
   padding: 30 30;
-  border-radius: 15px;
-  background-color: #d4fafc;
+
+  background-color: #ecf2ff;
+  margin: auto;
+  width: 80%;
 }
