@@ -5,6 +5,15 @@
     Ajouter Ami
   </button>
   <p>{{ lesAmisCreationStatus }}</p>
+  <div>
+    <label>Nom de l'ami :</label>
+    <input
+      type="text"
+      [(ngModel)]="amiName"
+      (input)="onUpdateAmiName($event)"
+    />
+    <p>Le nom de l'ami est : {{ amiName }}</p>
+  </div>
 
   <app-un-ami></app-un-ami>
   <hr />

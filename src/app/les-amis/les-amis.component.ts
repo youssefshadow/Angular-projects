@@ -7,15 +7,21 @@ import { Component } from '@angular/core';
 })
 export class LesAmisComponent {
   authorizeAmi: boolean = false;
-  lesAmisCreationStatus: string = 'Cliquer pour ajouter un ami';
+  lesAmisCreationStatus: string = 'Patientez';
+  amiName: string = '';
 
   constructor() {
     setTimeout(() => {
       this.authorizeAmi = true;
+      this.lesAmisCreationStatus = 'Cliquer pour ajouter un ami!';
     }, 3000);
   }
 
   onCreationAmi() {
     this.lesAmisCreationStatus = 'Un nouvel ami a été ajouté !';
+  }
+  onUpdateAmiName(event: any) {
+    console.log(event.target.value);
+    this.amiName = event.target.value;
   }
 }
