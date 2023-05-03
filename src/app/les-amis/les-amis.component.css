@@ -17,3 +17,22 @@
   margin-bottom: 30px;
   width: 80%;
 }
+.btnAmi {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-size: 16px;
+  font-weight: 500;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+.btnAmi:hover {
+  background-color: #0069d9;
+}
+.btnAmi:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
+  background-color: #9ba4b5;
+}
