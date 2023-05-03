@@ -6,7 +6,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./les-amis.component.css'],
 })
 export class LesAmisComponent {
-  authorizeAmi = false;
+  authorizeAmi: boolean = false;
 
   constructor() {
     setTimeout(() => {
