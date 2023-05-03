@@ -1,6 +1,11 @@
 <div class="container">
   <h2 class="liste">La liste des copains!</h2>
-  <button class="btnAmi" [disabled]="!authorizeAmi">Ajouter Ami</button>
+
+  <button class="btnAmi" [disabled]="!authorizeAmi" (click)="onCreationAmi()">
+    Ajouter Ami
+  </button>
+  <p>{{ lesAmisCreationStatus }}</p>
+
   <app-un-ami></app-un-ami>
   <hr />
   <app-un-ami></app-un-ami>
