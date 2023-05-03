@@ -9,11 +9,12 @@ export class LesAmisComponent {
   authorizeAmi: boolean = false;
   lesAmisCreationStatus: string = 'Patientez';
   amiName: string = '';
+  amiCreated: boolean = false;
 
   constructor() {
     setTimeout(() => {
       this.authorizeAmi = true;
-      this.lesAmisCreationStatus = 'Cliquer pour ajouter un ami!';
+      this.lesAmisCreationStatus = 'Cliquer pour ajouter un ami 😼!';
     }, 3000);
   }
 
@@ -21,6 +22,7 @@ export class LesAmisComponent {
     if (this.amiName !== '') {
       this.lesAmisCreationStatus = `Un nouvel ami a été ajouté: ${this.amiName}  😅 `;
       this.amiName = '';
+      this.amiCreated = true;
     }
   }
 

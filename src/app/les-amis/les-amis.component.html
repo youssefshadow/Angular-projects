@@ -13,7 +13,7 @@
     </button>
     <p>{{ lesAmisCreationStatus }}</p>
 
-    <!-- <p>Le nom de l'ami est : {{ amiName }}</p> -->
+    <p *ngIf="amiCreated">{{ amiName }}</p>
   </div>
 
   <app-un-ami></app-un-ami>
