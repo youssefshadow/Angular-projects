@@ -20,11 +20,8 @@ nav {
   margin-bottom: 50px;
 }
 
-.logo a {
-  font-size: 24px;
-  font-weight: bold;
-  text-decoration: none;
-  color: #fff;
+.logo img {
+  z-index: 70000;
 }
 
 .menu {
@@ -57,11 +54,14 @@ nav {
   margin: 5px;
 }
 
+.menu.active {
+  display: block;
+}
 @media screen and (max-width: 768px) {
   .menu {
     display: none;
     position: absolute;
-    top: 0;
+    top: 60px; /* ajout */
     left: 0;
     background-color: #0f6292;
     width: 100%;
@@ -71,8 +71,21 @@ nav {
     text-align: center;
   }
 
+  .menu.active {
+    display: block;
+  }
+
   .burger {
     display: block;
+    z-index: 999;
+  }
+
+  .logo img {
+    position: absolute;
+    top: 5;
+    left: 10%;
+    transform: translateX(-50%);
+    z-index: 1000;
   }
 
   .menu li {
