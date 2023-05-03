@@ -18,8 +18,11 @@ export class LesAmisComponent {
   }
 
   onCreationAmi() {
-    this.lesAmisCreationStatus = 'Un nouvel ami a été ajouté !';
+    if (this.amiName.trim() !== '') {
+      this.lesAmisCreationStatus = `Un nouvel ami a été ajouté😅  : ${this.amiName}!`;
+    }
   }
+
   onUpdateAmiName(event: any) {
     console.log(event.target.value);
     this.amiName = event.target.value;
