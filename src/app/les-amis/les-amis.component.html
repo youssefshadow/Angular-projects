@@ -1,10 +1,6 @@
 <div class="container">
   <h2 class="liste">La liste des copains!</h2>
 
-  <button class="btnAmi" [disabled]="!authorizeAmi" (click)="onCreationAmi()">
-    Ajouter Ami
-  </button>
-  <p>{{ lesAmisCreationStatus }}</p>
   <div>
     <label>Nom de l'ami :</label>
     <input
@@ -12,6 +8,10 @@
       [(ngModel)]="amiName"
       (input)="onUpdateAmiName($event)"
     />
+    <button class="btnAmi" [disabled]="!authorizeAmi" (click)="onCreationAmi()">
+      Ajouter Ami
+    </button>
+    <p>{{ lesAmisCreationStatus }}</p>
 
     <!-- <p>Le nom de l'ami est : {{ amiName }}</p> -->
   </div>

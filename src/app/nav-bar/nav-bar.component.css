@@ -1,6 +1,11 @@
+@import url("https://fonts.googleapis.com/css2?family=Chivo+Mono:wght@300&family=EB+Garamond&family=Montserrat:wght@300;400;700&family=Orbitron&family=Poppins:wght@200;300;500&display=swap");
 * {
   margin: 0;
   padding: 0;
+}
+header {
+  background-color: #0f6292;
+  width: 100%;
 }
 
 nav {
@@ -10,27 +15,67 @@ nav {
   justify-content: space-between;
   align-items: center;
   height: 60px;
-  width: 100%;
+  width: 80%;
   padding: 0 20px;
   margin-bottom: 50px;
 }
 
-ul {
-  list-style: none;
+.logo a {
+  font-size: 24px;
+  font-weight: bold;
+  text-decoration: none;
+  color: #fff;
+}
+
+.menu {
+  width: 50%;
   display: flex;
+  justify-content: space-between;
+  list-style: none;
   margin: 0;
   padding: 0;
 }
 
-li {
+.menu li {
   margin-right: 20px;
 }
 
-a {
+.menu li a {
   color: #fff;
   text-decoration: none;
 }
 
-a:hover {
-  text-decoration: underline;
+.burger {
+  display: none;
+  cursor: pointer;
+}
+
+.line {
+  width: 25px;
+  height: 3px;
+  background-color: #fff;
+  margin: 5px;
+}
+
+@media screen and (max-width: 768px) {
+  .menu {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: #0f6292;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .burger {
+    display: block;
+  }
+
+  .menu li {
+    margin: 10px 0;
+  }
 }
