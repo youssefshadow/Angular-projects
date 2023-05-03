@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
 })
 export class LesAmisComponent {
   authorizeAmi: boolean = false;
-  lesAmisCreationStatus = 'Cliquer pour ajouter un ami';
+  lesAmisCreationStatus: string = 'Cliquer pour ajouter un ami';
 
   constructor() {
     setTimeout(() => {
