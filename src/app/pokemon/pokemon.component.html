@@ -1,23 +1,20 @@
-<p>pokemon works!</p>
+<h1>Pokemon</h1>
+<div class="contain">
+  <div class="row">
+    <div class="col-md-3 mb-3 contain" *ngFor="let pokemon of pokemonList">
+      <div class="card">
+        <img
+          class="card-img-top"
+          src="{{ pokemon?.details?.sprites?.front_default }}"
+          alt="{{ pokemon?.name }}"
+        />
 
-<div class="row">
-  <div class="col-md-4 mb-4" *ngFor="let pokemon of pokemonList">
-    <div class="card">
-      <img
-        class="card-img-top"
-        src="{{ pokemon?.details?.sprites?.front_default }}"
-        alt="{{ pokemon?.name }}"
-      />
-
-      <div class="card-body">
-        <h5 class="card-title">{{ pokemon?.name }}</h5>
-        <p class="card-text">
-          Type: {{ pokemon?.details?.types[0]?.type?.name }}
-        </p>
-        <!-- <p class="card-text">
-          Abilities:
-          {{ pokemon?.details?.abilities?.map(a => a.ability.name).join(', ') }}
-        </p> -->
+        <div class="card-body">
+          <h5 class="card-title">{{ pokemon?.name }}</h5>
+          <p class="card-text">
+            Type: {{ pokemon?.details?.types[0]?.type?.name }}
+          </p>
+        </div>
       </div>
     </div>
   </div>
