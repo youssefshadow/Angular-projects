@@ -11,8 +11,6 @@ import { TodolistComponent } from './todo-list/todo-list.component';
 @NgModule({
   declarations: [
     AppComponent,
-
-    LesAmisComponent,
     LesAmisComponent,
     UnAmiComponent,
     NavBarComponent,
