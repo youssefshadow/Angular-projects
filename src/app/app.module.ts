@@ -7,6 +7,7 @@ import { LesAmisComponent } from './les-amis/les-amis.component';
 import { UnAmiComponent } from './un-ami/un-ami.component';
 import { NavBarComponent } from './nav-bar/nav-bar.component';
 import { TodolistComponent } from './todo-list/todo-list.component';
+import { PokemonComponent } from './pokemon/pokemon.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { TodolistComponent } from './todo-list/todo-list.component';
     UnAmiComponent,
     NavBarComponent,
     TodolistComponent,
+    PokemonComponent,
   ],
   imports: [BrowserModule, FormsModule],
   providers: [],
