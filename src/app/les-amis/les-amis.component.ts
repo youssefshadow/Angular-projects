@@ -21,7 +21,7 @@ export class LesAmisComponent {
   onCreationAmi() {
     if (this.amiName !== '') {
       this.lesAmisCreationStatus = `Un nouvel ami a été ajouté: ${this.amiName}  😅 `;
-      this.amiName = '';
+
       this.amiCreated = true;
     }
   }
