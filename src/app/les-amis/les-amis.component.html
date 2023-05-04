@@ -18,17 +18,22 @@
     <ng-template #noAmi>
       <p>Ne restez pas seul ajoutez un Ami</p>
     </ng-template>
-  </div>
 
-  <app-un-ami></app-un-ami>
-  <hr />
-  <app-un-ami></app-un-ami>
-  <hr />
-  <app-un-ami></app-un-ami>
-  <hr />
-  <app-un-ami></app-un-ami>
-  <hr />
-  <app-un-ami></app-un-ami>
-  <hr />
-  <app-un-ami></app-un-ami>
+    <label>Couleur du titre :</label>
+    <input
+      type="text"
+      [(ngModel)]="titleColor"
+      (input)="onUpdateTitleColor($event)"
+    />
+
+    <h2 class="liste" [ngStyle]="{ color: titleColor }">
+      La liste des copains!
+    </h2>
+
+    <app-un-ami></app-un-ami>
+    <hr />
+    <app-un-ami></app-un-ami>
+    <hr />
+    <app-un-ami></app-un-ami>
+  </div>
 </div>
