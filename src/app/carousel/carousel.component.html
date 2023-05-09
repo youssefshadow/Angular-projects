@@ -1,1 +1,7 @@
-<p>carousel works!</p>
+<div class="carousel-container">
+  <img [src]="images[currentSlide]" class="carousel-image" />
+  <div class="carousel-controls">
+    <button (click)="prevSlide()">Prev</button>
+    <button (click)="nextSlide()">Next</button>
+  </div>
+</div>
