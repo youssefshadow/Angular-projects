@@ -3,9 +3,12 @@
   <input
     type="text"
     [(ngModel)]="searchTerm"
-    placeholder="Search"
+    placeholder="Recherchez votre pokémon"
     (input)="onSearch()"
   />
+  <button class="research" (click)="toggleFavorites()">
+    {{ showFavoritesOnly ? " Les Pokémon" : " Les favoris" }}
+  </button>
 </div>
 
 <div *ngIf="noResultsFound">
@@ -32,6 +35,26 @@
           <p class="card-text">
             <span> Type</span>: {{ pokemon?.details?.types[0]?.type?.name }}
           </p>
+          <button
+            class="btn btn-outline-danger"
+            *ngIf="!isFavorite(pokemon)"
+            (click)="addToFavorites(pokemon)"
+          >
+            <img
+              class="iconFavoris"
+              src="https://img.icons8.com/dusk/64/null/plus-2-math.png"
+            />
+          </button>
+          <button
+            class="btn btn-danger"
+            *ngIf="isFavorite(pokemon)"
+            (click)="removeFromFavorites(pokemon)"
+          >
+            <img
+              class="iconFavoris"
+              src="https://img.icons8.com/cotton/64/null/like--v3.png"
+            />
+          </button>
         </div>
       </div>
     </div>

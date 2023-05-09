@@ -94,6 +94,27 @@ input[type="text"]:focus {
 .card-text:first-of-type {
   margin-top: 10px;
 }
+.card button {
+  background-color: transparent;
+  border: none;
+}
+.iconFavoris {
+  width: 20px;
+  height: 20px;
+}
+.research {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  margin-left: 15px;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.research:hover {
+  background-color: #3e8e41;
+}
 
 @media screen and (max-width: 768px) {
   .contain {
