@@ -1,6 +1,34 @@
 h1 {
   text-align: center;
 }
+.search-container {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+input[type="text"] {
+  padding: 10px;
+  width: 50%;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  background-color: #f8f8f8;
+  font-size: 16px;
+}
+span {
+  color: #ff6d60;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border: 1px solid #007bff;
+}
+
+input[type="text"]:focus {
+  outline: none;
+  border: 1px solid #007bff;
+}
 
 .row {
   width: 80%;

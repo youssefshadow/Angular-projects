@@ -7,9 +7,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PokemonComponent implements OnInit {
   pokemonList: any[] = [];
+  filteredPokemonList: any[] = [];
+  searchTerm: string = '';
+  noResultsFound: boolean = false;
 
   constructor() {}
-  // initialiser l'api
+
   ngOnInit() {
     fetch('https://pokeapi.co/api/v2/pokemon?limit=151')
       .then((response) => response.json())
@@ -20,8 +23,16 @@ export class PokemonComponent implements OnInit {
             .then((response) => response.json())
             .then((details) => {
               this.pokemonList[index].details = details;
+              this.filteredPokemonList = this.pokemonList; // initialize filteredPokemonList to the entire pokemonList
             });
         });
       });
+  }
+
+  onSearch() {
+    this.filteredPokemonList = this.pokemonList.filter((pokemon) => {
+      return pokemon.name.toLowerCase().includes(this.searchTerm.toLowerCase());
+    });
+    this.noResultsFound = this.filteredPokemonList.length === 0; // set noResultsFound to true if no pokemon matches the search term
   }
 }
