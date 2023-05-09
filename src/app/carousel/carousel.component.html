@@ -1,7 +1,13 @@
 <div class="carousel-container">
-  <img [src]="images[currentSlide]" class="carousel-image" />
+  <div class="carousel">
+    <img [src]="images[currentSlide]" class="carousel-image" />
+  </div>
   <div class="carousel-controls">
-    <button (click)="prevSlide()">Prev</button>
-    <button (click)="nextSlide()">Next</button>
+    <button (click)="prevSlide()">
+      <img src="https://img.icons8.com/plasticine/100/null/circled-left.png" />
+    </button>
+    <button (click)="nextSlide()">
+      <img src="https://img.icons8.com/plasticine/100/null/circled-right.png" />
+    </button>
   </div>
 </div>
