@@ -16,6 +16,7 @@ h1 {
 .card {
   display: flex;
   justify-content: center;
+  width: 300px;
   border: none;
   border-radius: 10px;
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
@@ -50,11 +51,16 @@ h1 {
   font-size: 20px;
   font-weight: bold;
   margin-bottom: 10px;
+  font-family: "play", serif;
 }
 
 .card-text {
   font-size: 16px;
   margin-bottom: 5px;
+}
+.card span {
+  color: #2a2f4f;
+  font-weight: 800;
 }
 
 .card-text:first-of-type {
