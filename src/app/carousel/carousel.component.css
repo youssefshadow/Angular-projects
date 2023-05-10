@@ -57,7 +57,7 @@ h1 {
 @media (max-width: 768px) {
   .carousel-container {
     width: 90%;
-    height: 450px;
+
     box-shadow: none;
   }
   .carousel-image {
