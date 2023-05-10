@@ -25,7 +25,7 @@ export class PokemonComponent implements OnInit {
             .then((response) => response.json())
             .then((details) => {
               this.pokemonList[index].details = details;
-              this.filteredPokemonList = this.pokemonList; // initialize filteredPokemonList to the entire pokemonList
+              this.filteredPokemonList = this.pokemonList;
             });
         });
       });

@@ -50,7 +50,7 @@ input[type="text"]:focus {
   box-shadow: 0px 0px 5px 0px rgba(0, 0, 0, 0.2);
   transition: all 0.3s ease-in-out;
   margin-bottom: 20px;
-  background-color: #f2e5e5;
+  background-color: #ffff;
 }
 
 .card:hover {
