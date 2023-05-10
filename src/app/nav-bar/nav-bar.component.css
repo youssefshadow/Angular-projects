@@ -21,11 +21,45 @@ nav {
   font-family: "Orbitron", serif;
   border: transparent;
 }
+nav a {
+  position: relative;
+}
+
+nav a::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background-color: transparent;
+  transition: width 0.3s ease-in-out;
+}
+
+nav a:hover::after {
+  width: 100%;
+  background-color: #f15b6c;
+  animation: animate-border 0.5s ease-in-out forwards;
+}
+
+@keyframes animate-border {
+  from {
+    width: 0%;
+  }
+  to {
+    width: 100%;
+  }
+}
 
 .logo img {
   width: 60px;
   height: 60px;
   z-index: 70000;
+  transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+  transform: rotate(360deg);
 }
 
 .menu {
