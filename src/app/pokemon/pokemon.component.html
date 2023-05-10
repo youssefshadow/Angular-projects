@@ -17,6 +17,10 @@
   </h1>
 </div>
 
+<div *ngIf="showFavoritesOnly && favoritePokemonList.length === 0">
+  <h1>Aucun Pokémon favori</h1>
+</div>
+
 <div class="contain">
   <div class="row">
     <div
@@ -26,8 +30,8 @@
       <div class="card">
         <img
           class="card-img-top"
-          src="{{ pokemon?.details?.sprites?.front_default }}"
-          alt="{{ pokemon?.name }}"
+          [src]="pokemon?.details?.sprites?.front_default"
+          [alt]="pokemon?.name"
         />
 
         <div class="card-body">
