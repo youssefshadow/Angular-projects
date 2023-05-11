@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Observable, Observer } from 'rxjs';
 
 @Component({
   selector: 'app-pokemon-list',
@@ -13,7 +14,14 @@ export class PokemonComponent implements OnInit {
   favoritePokemonList: any[] = [];
   showFavoritesOnly = false;
 
-  constructor() {}
+  favoriteAdded$: Observable<any>;
+  private favoriteAddedObserver!: Observer<any>;
+
+  constructor() {
+    this.favoriteAdded$ = new Observable((observer) => {
+      this.favoriteAddedObserver = observer;
+    });
+  }
 
   ngOnInit() {
     fetch('https://pokeapi.co/api/v2/pokemon?limit=151')
@@ -35,12 +43,16 @@ export class PokemonComponent implements OnInit {
     this.filteredPokemonList = this.pokemonList.filter((pokemon) => {
       return pokemon.name.toLowerCase().includes(this.searchTerm.toLowerCase());
     });
-    this.noResultsFound = this.filteredPokemonList.length === 0; // set noResultsFound to true if no pokemon matches the search term
+    this.noResultsFound = this.filteredPokemonList.length === 0;
   }
 
   addToFavorites(pokemon: any) {
     if (!this.favoritePokemonList.includes(pokemon)) {
       this.favoritePokemonList.push(pokemon);
+      if (this.favoriteAddedObserver) {
+        this.favoriteAddedObserver.next(pokemon); // Pass the added Pokemon as a value
+      }
+      console.log('Ajout favoris');
     }
   }
 
@@ -54,6 +66,7 @@ export class PokemonComponent implements OnInit {
   isFavorite(pokemon: any) {
     return this.favoritePokemonList.includes(pokemon);
   }
+
   toggleFavorites() {
     this.showFavoritesOnly = !this.showFavoritesOnly;
     this.filteredPokemonList = this.showFavoritesOnly
