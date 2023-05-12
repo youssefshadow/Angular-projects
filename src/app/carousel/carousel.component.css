@@ -10,7 +10,6 @@ h1 {
   height: 500px;
   overflow: hidden;
   margin: auto;
-
   margin-top: 30px;
   margin-bottom: 50px;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
@@ -23,8 +22,33 @@ h1 {
   width: 100%;
   height: 100%;
   object-fit: cover;
-
   transition: transform 0.5s ease-in-out;
+}
+
+.curtain {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+  z-index: 1;
+  transition: transform 0.5s ease-in-out;
+  transform: translateX(-100%);
+}
+
+.slide-image {
+  position: relative;
+  z-index: 2;
+  transition: opacity 0.5s ease-in-out;
+}
+
+.slide-image.fade-out {
+  opacity: 0;
+}
+
+.curtain.slide-in {
+  transform: translateX(0);
 }
 
 .carousel-controls {
@@ -36,6 +60,7 @@ h1 {
   justify-content: space-between;
   align-items: center;
   min-height: 50px;
+  z-index: 999;
 }
 
 .carousel-controls button {
@@ -44,10 +69,32 @@ h1 {
   margin: 0 10px;
   cursor: pointer;
 }
+
 .carousel-controls button img {
   width: 50%;
   height: 50%;
 }
+
+.carousel-image {
+  width: 100%;
+  height: auto;
+}
+
+.carousel-image.ng-trigger-slideAnimation {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.carousel-image.ng-trigger-slideAnimation:enter {
+  transform: translateX(-100%);
+}
+
+.carousel-image.ng-trigger-slideAnimation:leave {
+  transform: translateX(100%);
+}
+
 @media screen and (max-width: 1300px) {
   .carousel-container {
     width: 80%;
@@ -58,16 +105,15 @@ h1 {
 @media (max-width: 768px) {
   .carousel-container {
     width: 90%;
-
     box-shadow: none;
   }
+
   .carousel-image {
     height: auto;
   }
-  @media (max-width: 768px) {
-    .carousel-controls {
-      bottom: 0;
-      top: 0;
-    }
+
+  .carousel-controls {
+    bottom: 0;
+    top: 0;
   }
 }

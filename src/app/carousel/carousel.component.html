@@ -1,7 +1,13 @@
 <h1>THE WORLD OF POKÉMON</h1>
 <div class="carousel-container">
   <div class="carousel">
-    <img [src]="images[currentSlide]" class="carousel-image" />
+    <img
+      *ngFor="let image of images; let i = index"
+      [src]="image"
+      class="carousel-image"
+      [@slideAnimation]="currentSlide === i ? 'visible' : 'hidden'"
+      [style.zIndex]="currentSlide === i ? 2 : 1"
+    />
   </div>
   <div class="carousel-controls">
     <button (click)="prevSlide()">

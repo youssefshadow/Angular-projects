@@ -50,7 +50,7 @@ export class PokemonComponent implements OnInit {
     if (!this.favoritePokemonList.includes(pokemon)) {
       this.favoritePokemonList.push(pokemon);
       if (this.favoriteAddedObserver) {
-        this.favoriteAddedObserver.next(pokemon); // Pass the added Pokemon as a value
+        this.favoriteAddedObserver.next(pokemon);
       }
       console.log('Ajout favoris');
     }
