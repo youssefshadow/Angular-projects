@@ -12,6 +12,7 @@ import {
   templateUrl: './carousel.component.html',
   styleUrls: ['./carousel.component.css'],
   animations: [
+    //Gestion animation caroussel
     trigger('slideAnimation', [
       transition('* => *', [
         style({ transform: 'translateX(-100%)' }),
